@@ -1,0 +1,1192 @@
+{
+  "tracks": [
+    {
+      "id": "geometry",
+      "title": "Geometry",
+      "subtitle": "Think in shapes. Prove with confidence.",
+      "description": "Build a visual and logical foundation: angles, proof, congruence, similarity, circles and three-dimensional measurement.",
+      "color": "violet",
+      "icon": "Shapes",
+      "level": "Core • Geometry"
+    },
+    {
+      "id": "algebra-2",
+      "title": "Algebra 2",
+      "subtitle": "Find the patterns behind the numbers.",
+      "description": "Go deeper into functions, quadratics, polynomials, radicals, exponentials and logarithms, with plenty of applied modeling.",
+      "color": "blue",
+      "icon": "FunctionSquare",
+      "level": "Core • Algebra 2"
+    },
+    {
+      "id": "math-bridge",
+      "title": "Math Bridge",
+      "subtitle": "Go beyond the classroom.",
+      "description": "Extend your course with statistics, probability, the unit circle and precalculus skills used in IB MYP and honors pathways.",
+      "color": "mint",
+      "icon": "Atom",
+      "level": "Extension • MYP / Honors"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "geo-foundations",
+      "trackId": "geometry",
+      "title": "Foundations & Proof",
+      "description": "Learn the vocabulary and logic that turn a drawing into a mathematical argument.",
+      "order": 1
+    },
+    {
+      "id": "geo-triangles",
+      "trackId": "geometry",
+      "title": "Triangles & Congruence",
+      "description": "Master triangle rules and justify when two triangles are exactly the same shape and size.",
+      "order": 2
+    },
+    {
+      "id": "geo-similarity",
+      "trackId": "geometry",
+      "title": "Similarity & Right-Triangle Trigonometry",
+      "description": "Connect scale factors, right-triangle distances and sine, cosine and tangent.",
+      "order": 3
+    },
+    {
+      "id": "geo-circles",
+      "trackId": "geometry",
+      "title": "Polygons & Circles",
+      "description": "Use shape properties and circle geometry to solve visual and numerical problems.",
+      "order": 4
+    },
+    {
+      "id": "geo-measurement",
+      "trackId": "geometry",
+      "title": "Area, Surface Area & Volume",
+      "description": "Model two-dimensional and three-dimensional figures with the right units and formulas.",
+      "order": 5
+    },
+    {
+      "id": "alg-functions",
+      "trackId": "algebra-2",
+      "title": "Functions & Graphs",
+      "description": "Understand the language of functions before studying their families.",
+      "order": 1
+    },
+    {
+      "id": "alg-quadratics",
+      "trackId": "algebra-2",
+      "title": "Quadratics & Complex Numbers",
+      "description": "Solve second-degree equations and extend arithmetic to non-real solutions.",
+      "order": 2
+    },
+    {
+      "id": "alg-polynomials",
+      "trackId": "algebra-2",
+      "title": "Polynomial Functions",
+      "description": "Analyze higher-degree expressions and their factor/graph relationships.",
+      "order": 3
+    },
+    {
+      "id": "alg-rational",
+      "trackId": "algebra-2",
+      "title": "Rational & Radical Expressions",
+      "description": "Work safely with fractions involving variables and equations involving square roots.",
+      "order": 4
+    },
+    {
+      "id": "alg-growth",
+      "trackId": "algebra-2",
+      "title": "Exponents, Logs & Sequences",
+      "description": "Model repeated multiplication, undo exponentiation and recognize iterative patterns.",
+      "order": 5
+    },
+    {
+      "id": "bridge-statistics",
+      "trackId": "math-bridge",
+      "title": "Statistics & Probability",
+      "description": "Make sense of data and calculate the likelihood of outcomes.",
+      "order": 1
+    },
+    {
+      "id": "bridge-trig",
+      "trackId": "math-bridge",
+      "title": "Unit Circle & Trigonometric Laws",
+      "description": "Extend right-triangle trigonometry to all angles and non-right triangles.",
+      "order": 2
+    },
+    {
+      "id": "bridge-functions",
+      "trackId": "math-bridge",
+      "title": "Precalculus Function Skills",
+      "description": "Read challenging function restrictions and transform formulas into models.",
+      "order": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": "points-lines-planes",
+      "chapterId": "geo-foundations",
+      "title": "Points, Lines & Planes",
+      "summary": "Geometry starts by describing locations and the objects connecting them. A point has no size; a line extends forever in both directions; a plane is a flat surface extending without end.",
+      "ideas": [
+        "Name a point with a capital letter, and a line using two points on it.",
+        "Two distinct points determine exactly one line; three noncollinear points determine exactly one plane.",
+        "Segments have two endpoints, while rays begin at one point and continue forever in one direction."
+      ],
+      "formulas": [
+        "Segment length on a number line = ∣b − a∣ ",
+        "Midpoint = (a + b)/2"
+      ],
+      "workedExample": {
+        "prompt": "Points A and B are at −3 and 7 on a number line. Find the length and midpoint of AB.",
+        "steps": [
+          "Length = ",
+          "7 − (−3)",
+          " = 10.",
+          "Midpoint = (−3 + 7)/2 = 2.",
+          "A segment is finite, even though its supporting line goes on forever."
+        ]
+      },
+      "commonMistake": "Do not confuse a segment with a full line; the segment has endpoints.",
+      "realWorld": "Map coordinates, architectural diagrams and computer graphics all rely on points and segments.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "angles-parallel",
+      "chapterId": "geo-foundations",
+      "title": "Angles & Parallel Lines",
+      "summary": "Angles measure a turn between two rays. Parallel lines intersected by a transversal create repeating angle patterns.",
+      "ideas": [
+        "Vertical angles are equal; a linear pair sums to 180°.",
+        "Corresponding and alternate interior angles are equal when the lines are parallel.",
+        "Same-side interior angles are supplementary: their measures add to 180°."
+      ],
+      "formulas": [
+        "Complementary: a + b = 90°",
+        "Supplementary: a + b = 180°"
+      ],
+      "workedExample": {
+        "prompt": "One alternate interior angle measures 68°. Find the matching angle when the lines are parallel.",
+        "steps": [
+          "Identify the pair as alternate interior angles.",
+          "Parallel lines make alternate interior angles congruent.",
+          "The other angle is 68°."
+        ]
+      },
+      "commonMistake": "Adjacent does not always mean equal; check whether the angles are vertical, corresponding or supplementary.",
+      "realWorld": "Street grids and stair railings use parallel-line angle reasoning.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "logic-proofs",
+      "chapterId": "geo-foundations",
+      "title": "Logic & Two-Column Proofs",
+      "summary": "A proof is a chain of statements, each supported by a definition, postulate or theorem. The goal is to explain why a result must be true.",
+      "ideas": [
+        "A conditional statement has hypothesis P and conclusion Q: if P, then Q.",
+        "Modus ponens says P and (P → Q) together imply Q.",
+        "In a two-column proof, the left column gives statements and the right column gives reasons."
+      ],
+      "formulas": [
+        "P → Q, P ⟹ Q",
+        "A = B, B = C ⟹ A = C"
+      ],
+      "workedExample": {
+        "prompt": "Given AB = CD and CD = EF, prove AB = EF.",
+        "steps": [
+          "Write AB = CD (given).",
+          "Write CD = EF (given).",
+          "Use the transitive property of equality: AB = EF."
+        ]
+      },
+      "commonMistake": "A drawing is not proof; properties must follow from stated facts.",
+      "realWorld": "Formal reasoning supports coding, science experiments and persuasive arguments.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "triangle-angles",
+      "chapterId": "geo-triangles",
+      "title": "Triangle Angle Relationships",
+      "summary": "The three interior angles of any triangle add to 180°. Exterior angles encode the two remote interior angles.",
+      "ideas": [
+        "Classify triangles as acute, right or obtuse by their angles.",
+        "The interior angle sum is 180° for every Euclidean triangle.",
+        "An exterior angle equals the sum of its two non-adjacent interior angles."
+      ],
+      "formulas": [
+        "A + B + C = 180°",
+        "Exterior angle = remote angle 1 + remote angle 2"
+      ],
+      "workedExample": {
+        "prompt": "A triangle has angles 42° and 63°. Find its third angle.",
+        "steps": [
+          "Add the known angles: 42 + 63 = 105°.",
+          "Subtract from 180°: 180 − 105 = 75°.",
+          "Check all three angles total 180°."
+        ]
+      },
+      "commonMistake": "Do not add 360°; that is the angle sum for a quadrilateral.",
+      "realWorld": "Surveyors use triangle-angle relationships to find inaccessible positions.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "congruent-triangles",
+      "chapterId": "geo-triangles",
+      "title": "Triangle Congruence",
+      "summary": "Congruent triangles match in every side and angle. You rarely need all six measurements to prove it.",
+      "ideas": [
+        "SSS uses three pairs of matching sides.",
+        "SAS uses two sides and the included angle; ASA and AAS use corresponding angles and a side.",
+        "AAA proves similarity, not congruence; SSA is not a general congruence criterion."
+      ],
+      "formulas": [
+        "SSS, SAS, ASA, AAS, HL (right triangles)",
+        "CPCTC: corresponding parts of congruent triangles are congruent"
+      ],
+      "workedExample": {
+        "prompt": "Two triangles have matching sides 5, 7 and 9. What makes them congruent?",
+        "steps": [
+          "List three pairs of matching side lengths.",
+          "Apply the side-side-side criterion (SSS).",
+          "The corresponding angles must also match."
+        ]
+      },
+      "commonMistake": "SAS requires the INCLUDED angle, not any angle.",
+      "realWorld": "Engineers check congruent supports to ensure repeated components fit.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "triangle-inequality",
+      "chapterId": "geo-triangles",
+      "title": "Triangle Inequality & Isosceles Triangles",
+      "summary": "Not every three lengths can create a triangle. Equal sides also reveal information about angles.",
+      "ideas": [
+        "The sum of any two side lengths must be greater than the third.",
+        "For ordered side lengths a ≤ b ≤ c, checking a + b > c is enough.",
+        "In an isosceles triangle, angles opposite equal sides are equal."
+      ],
+      "formulas": [
+        "a + b > c",
+        "Equal sides ⟺ equal opposite angles"
+      ],
+      "workedExample": {
+        "prompt": "Can lengths 4, 6 and 9 form a triangle?",
+        "steps": [
+          "Find the two shorter lengths: 4 and 6.",
+          "Their sum is 10, greater than 9.",
+          "Yes, the triangle inequality holds."
+        ]
+      },
+      "commonMistake": "Equality is not enough: 4 + 5 = 9 creates a straight segment, not a triangle.",
+      "realWorld": "Construction crews use bracing triangles because valid, rigid shapes matter.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "similar-triangles",
+      "chapterId": "geo-similarity",
+      "title": "Similarity & Scale Factor",
+      "summary": "Similar figures have equal corresponding angles and proportional matching side lengths. The scale factor changes distances but not shape.",
+      "ideas": [
+        "AA is enough to show two triangles are similar.",
+        "Match corresponding sides in the same order when writing proportions.",
+        "Perimeter scales by k, while area scales by k²."
+      ],
+      "formulas": [
+        "new length = k × old length",
+        "new area = k² × old area"
+      ],
+      "workedExample": {
+        "prompt": "A triangle with side 6 is enlarged by scale factor 2.5. Find the new side.",
+        "steps": [
+          "Identify k = 2.5.",
+          "Multiply the side: 6 × 2.5 = 15.",
+          "Other corresponding sides use the same factor."
+        ]
+      },
+      "commonMistake": "Area does not scale by k; it scales by k².",
+      "realWorld": "Maps, blueprints and photo enlargements are all similarity models.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "pythagorean-theorem",
+      "chapterId": "geo-similarity",
+      "title": "Pythagorean Theorem",
+      "summary": "A right triangle links its legs and hypotenuse through a beautiful square-area relationship.",
+      "ideas": [
+        "The hypotenuse is opposite the right angle and is the longest side.",
+        "For legs a and b and hypotenuse c, a² + b² = c².",
+        "Common triples include 3-4-5, 5-12-13 and scaled copies."
+      ],
+      "formulas": [
+        "a² + b² = c²",
+        "Distance = √((x₂−x₁)² + (y₂−y₁)²)"
+      ],
+      "workedExample": {
+        "prompt": "A ladder reaches 12 feet up a wall and its foot is 5 feet away. How long is it?",
+        "steps": [
+          "Identify the ladder as the hypotenuse.",
+          "Compute c² = 12² + 5² = 169.",
+          "Take the positive root: c = 13 feet."
+        ]
+      },
+      "commonMistake": "Do not treat the hypotenuse as a leg; it must be c.",
+      "realWorld": "Navigation, screens and building diagonals all use right-triangle distance.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "right-triangle-trig",
+      "chapterId": "geo-similarity",
+      "title": "Sine, Cosine & Tangent",
+      "summary": "Trigonometric ratios connect an acute angle to lengths in a right triangle. You can find missing sides without knowing every angle.",
+      "ideas": [
+        "Relative to angle θ, identify opposite, adjacent and hypotenuse.",
+        "Sine is opposite/hypotenuse; cosine is adjacent/hypotenuse.",
+        "Tangent is opposite/adjacent; use inverse trig to find an angle."
+      ],
+      "formulas": [
+        "sin θ = opposite / hypotenuse",
+        "cos θ = adjacent / hypotenuse",
+        "tan θ = opposite / adjacent"
+      ],
+      "workedExample": {
+        "prompt": "A right triangle has opposite side 3 and hypotenuse 5 relative to θ. Find sin θ.",
+        "steps": [
+          "Locate the opposite and hypotenuse.",
+          "Use sin θ = opposite/hypotenuse.",
+          "sin θ = 3/5 = 0.6."
+        ]
+      },
+      "commonMistake": "Opposite and adjacent depend on the angle you choose.",
+      "realWorld": "Measure heights of trees or slopes of ramps from safe distances.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "quadrilateral-properties",
+      "chapterId": "geo-circles",
+      "title": "Quadrilaterals & Polygons",
+      "summary": "Polygons are closed figures of straight line segments. Their interior angle sums depend only on the number of sides.",
+      "ideas": [
+        "A quadrilateral has interior angle sum 360°.",
+        "Parallelograms have opposite sides parallel and equal, and opposite angles equal.",
+        "Rectangles have four right angles; rhombi have four equal sides; squares have both properties."
+      ],
+      "formulas": [
+        "Interior angle sum = (n − 2) × 180°",
+        "Regular polygon interior angle = (n − 2) × 180° / n"
+      ],
+      "workedExample": {
+        "prompt": "Find the sum of interior angles of a hexagon.",
+        "steps": [
+          "A hexagon has n = 6 sides.",
+          "Compute (6 − 2) × 180°.",
+          "The sum is 720°."
+        ]
+      },
+      "commonMistake": "A square is a rectangle and a rhombus, not a completely unrelated shape.",
+      "realWorld": "Floor tiles and roof trusses use polygon properties.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "circle-angles",
+      "chapterId": "geo-circles",
+      "title": "Chords, Tangents & Circle Angles",
+      "summary": "Circle angles encode arcs. Central angles and inscribed angles that intercept the same arc follow a 2-to-1 relationship.",
+      "ideas": [
+        "A central angle has its vertex at the circle center.",
+        "An inscribed angle has its vertex on the circle and measures half its intercepted arc.",
+        "A radius to a point of tangency is perpendicular to the tangent line."
+      ],
+      "formulas": [
+        "Inscribed angle = intercepted arc / 2",
+        "Central angle = intercepted arc"
+      ],
+      "workedExample": {
+        "prompt": "An inscribed angle intercepts an arc measuring 110°. Find the angle.",
+        "steps": [
+          "Identify the intercepted arc measure, 110°.",
+          "An inscribed angle is half its intercepted arc.",
+          "110° / 2 = 55°."
+        ]
+      },
+      "commonMistake": "Do not halve the arc for a central angle: central angle and arc have equal measures.",
+      "realWorld": "Rotating parts and curved roadway designs depend on circular angles.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "arcs-sectors",
+      "chapterId": "geo-circles",
+      "title": "Arc Length & Sector Area",
+      "summary": "A sector is a slice of a circle. Its arc length and area are fractions of the full circle determined by the central angle.",
+      "ideas": [
+        "Use degree fractions when the central angle is in degrees.",
+        "Circumference is 2πr, while circle area is πr².",
+        "For radian measure θ, arc length simplifies to rθ."
+      ],
+      "formulas": [
+        "Arc length = (θ/360°) × 2πr",
+        "Sector area = (θ/360°) × πr²"
+      ],
+      "workedExample": {
+        "prompt": "Find the arc length of a 90° sector in a circle of radius 8.",
+        "steps": [
+          "A 90° arc is one quarter of a full turn.",
+          "Full circumference is 2π(8) = 16π.",
+          "Arc length = 16π/4 = 4π."
+        ]
+      },
+      "commonMistake": "Arc length has distance units; sector area has square units.",
+      "realWorld": "Pizza portions, gears and irrigation sprinklers form sectors.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "area-perimeter",
+      "chapterId": "geo-measurement",
+      "title": "Perimeter & Area",
+      "summary": "Perimeter measures distance around a figure; area counts the unit squares within it.",
+      "ideas": [
+        "Rectangle perimeter adds all four sides; its area multiplies length and width.",
+        "Triangle area uses half the base times the perpendicular height.",
+        "Circle circumference and area use π and radius."
+      ],
+      "formulas": [
+        "Rectangle area = lw; perimeter = 2(l+w)",
+        "Triangle area = bh/2",
+        "Circle area = πr²"
+      ],
+      "workedExample": {
+        "prompt": "A rectangular garden is 8 meters by 5 meters. Find its area and perimeter.",
+        "steps": [
+          "Area = 8 × 5 = 40 m².",
+          "Perimeter = 2(8 + 5) = 26 m.",
+          "Remember the units differ."
+        ]
+      },
+      "commonMistake": "The slanted side of a triangle is not always its height.",
+      "realWorld": "Garden design and flooring estimates require area and perimeter.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "surface-area",
+      "chapterId": "geo-measurement",
+      "title": "Surface Area of Solids",
+      "summary": "Surface area adds the areas of all exposed faces of a solid. Net diagrams help make sure no face is missed.",
+      "ideas": [
+        "A rectangular prism has three pairs of equal opposing faces.",
+        "A cylinder has two circles and one curved lateral surface.",
+        "For pyramids and cones, distinguish slant height from vertical height."
+      ],
+      "formulas": [
+        "Prism SA = 2(lw + lh + wh)",
+        "Cylinder SA = 2πr² + 2πrh"
+      ],
+      "workedExample": {
+        "prompt": "Find the surface area of a box measuring 2 by 3 by 4.",
+        "steps": [
+          "Compute the three pair areas: 2×3, 2×4 and 3×4.",
+          "Add: 6 + 8 + 12 = 26.",
+          "Double for opposite faces: 52 square units."
+        ]
+      },
+      "commonMistake": "Do not confuse slant height with perpendicular height.",
+      "realWorld": "Packaging designers minimize material while covering every face.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "volume-solids",
+      "chapterId": "geo-measurement",
+      "title": "Volume of Solids",
+      "summary": "Volume measures the space inside a three-dimensional figure. Recognize the cross-sectional base area first.",
+      "ideas": [
+        "A prism or cylinder volume equals base area × height.",
+        "Pyramids and cones have one-third the volume of their matching prism or cylinder.",
+        "A sphere volume is four-thirds π times radius cubed."
+      ],
+      "formulas": [
+        "Prism V = Bh",
+        "Cylinder V = πr²h",
+        "Cone V = πr²h/3",
+        "Sphere V = 4πr³/3"
+      ],
+      "workedExample": {
+        "prompt": "Find the volume of a cylinder of radius 3 and height 5.",
+        "steps": [
+          "Find circular base area: π×3² = 9π.",
+          "Multiply by height 5.",
+          "Volume = 45π cubic units."
+        ]
+      },
+      "commonMistake": "Volume uses cubic units, not square units.",
+      "realWorld": "Water tanks and storage containers are modeled by volume.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "function-notation",
+      "chapterId": "alg-functions",
+      "title": "Function Notation & Evaluation",
+      "summary": "A function assigns exactly one output to each input. Function notation makes it easy to describe and evaluate rules.",
+      "ideas": [
+        "f(x) means the output when input x is given; it is not multiplication f×x.",
+        "A vertical line test checks whether a graph is a function.",
+        "Inputs form the domain; resulting outputs form the range."
+      ],
+      "formulas": [
+        "If f(x) = 2x + 3, then f(4) = 11",
+        "Average rate of change = (f(b)−f(a))/(b−a)"
+      ],
+      "workedExample": {
+        "prompt": "Given f(x) = 3x − 2, find f(5).",
+        "steps": [
+          "Replace x with 5.",
+          "Calculate 3(5) − 2.",
+          "The output is 13."
+        ]
+      },
+      "commonMistake": "Substitute into the entire expression before simplifying.",
+      "realWorld": "Cost, distance and temperature rules can all be expressed as functions.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "graph-transformations",
+      "chapterId": "alg-functions",
+      "title": "Graph Transformations",
+      "summary": "Transformations move or reshape a parent graph while preserving recognizable patterns.",
+      "ideas": [
+        "Adding outside the function shifts the graph vertically.",
+        "Replacing x by (x−h) shifts the graph RIGHT h units.",
+        "A negative outside the function reflects it over the x-axis."
+      ],
+      "formulas": [
+        "g(x) = a f(x−h) + k",
+        "Vertex of y=a(x−h)²+k is (h,k)"
+      ],
+      "workedExample": {
+        "prompt": "Find the vertex of y = (x − 4)² + 3.",
+        "steps": [
+          "Read h = 4 inside the parentheses.",
+          "Read k = 3 outside.",
+          "The vertex is (4,3)."
+        ]
+      },
+      "commonMistake": "Horizontal shifts seem backwards: (x−4) means right 4.",
+      "realWorld": "Transform graphs to model growth, projectile paths and signals.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "function-composition",
+      "chapterId": "alg-functions",
+      "title": "Composite Functions",
+      "summary": "Composition applies one function to the output of another. Order matters because f(g(x)) usually differs from g(f(x)).",
+      "ideas": [
+        "Compute the inside function first.",
+        "Use its output as the next function input.",
+        "For composition, check that the inside output belongs to the outer domain."
+      ],
+      "formulas": [
+        "(f∘g)(x) = f(g(x))",
+        "(g∘f)(x) = g(f(x))"
+      ],
+      "workedExample": {
+        "prompt": "If f(x)=2x+1 and g(x)=x², find f(g(3)).",
+        "steps": [
+          "Calculate g(3) = 3² = 9.",
+          "Use 9 as input to f: f(9)=2×9+1.",
+          "The answer is 19."
+        ]
+      },
+      "commonMistake": "Do not multiply f and g; the circle notation means compose.",
+      "realWorld": "Multi-stage pricing and unit conversion are function compositions.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "factoring-quadratics",
+      "chapterId": "alg-quadratics",
+      "title": "Factoring Quadratics",
+      "summary": "Factoring expresses a quadratic as a product of binomials, which can reveal its roots quickly.",
+      "ideas": [
+        "For x²+bx+c, find numbers that sum to b and multiply to c.",
+        "The zero-product property says AB=0 implies A=0 or B=0.",
+        "Always check the expression is equal to zero before reading roots."
+      ],
+      "formulas": [
+        "x² + bx + c = (x + p)(x + q), p+q=b, pq=c",
+        "AB=0 ⟹ A=0 or B=0"
+      ],
+      "workedExample": {
+        "prompt": "Factor x² + 7x + 12 and solve x²+7x+12=0.",
+        "steps": [
+          "Find 3 and 4 because 3+4=7 and 3×4=12.",
+          "Factor: (x+3)(x+4)=0.",
+          "Solutions are −3 and −4."
+        ]
+      },
+      "commonMistake": "Factoring an expression and solving an equation are different tasks.",
+      "realWorld": "Quadratic roots predict when trajectories reach ground level.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "solving-quadratics",
+      "chapterId": "alg-quadratics",
+      "title": "Quadratic Formula & Discriminant",
+      "summary": "The quadratic formula solves any equation ax²+bx+c=0 with a≠0. The discriminant tells you what sort of roots to expect.",
+      "ideas": [
+        "First identify a, b and c with the equation written as zero.",
+        "The discriminant D=b²−4ac determines the number of real roots.",
+        "D>0 gives two distinct real roots, D=0 one repeated root, D<0 no real roots."
+      ],
+      "formulas": [
+        "x = (−b ± √(b²−4ac)) / (2a)",
+        "Discriminant D = b²−4ac"
+      ],
+      "workedExample": {
+        "prompt": "Solve x² − 5x + 6 = 0.",
+        "steps": [
+          "Set a=1, b=−5, c=6.",
+          "D=25−24=1.",
+          "x=(5±1)/2, giving x=2 or x=3."
+        ]
+      },
+      "commonMistake": "The denominator is 2a for the WHOLE numerator.",
+      "realWorld": "Projectile motion and revenue optimization involve quadratic models.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "complex-numbers",
+      "chapterId": "alg-quadratics",
+      "title": "Introduction to Complex Numbers",
+      "summary": "Complex numbers extend real arithmetic using i, defined so i²=−1. They let us describe quadratic roots that are not real.",
+      "ideas": [
+        "A complex number has real part a and imaginary part b in a+bi.",
+        "Add real parts together and imaginary parts together.",
+        "Powers of i repeat every four steps: i, −1, −i, 1."
+      ],
+      "formulas": [
+        "i² = −1",
+        "i⁴ = 1",
+        "(a+bi)+(c+di)=(a+c)+(b+d)i"
+      ],
+      "workedExample": {
+        "prompt": "Simplify (3+2i)+(4−5i).",
+        "steps": [
+          "Add real parts: 3+4=7.",
+          "Add imaginary coefficients: 2+(−5)=−3.",
+          "Result: 7−3i."
+        ]
+      },
+      "commonMistake": "i is not the same as −1; i² equals −1.",
+      "realWorld": "Electrical engineering uses complex numbers to model alternating currents.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "polynomial-operations",
+      "chapterId": "alg-polynomials",
+      "title": "Adding & Multiplying Polynomials",
+      "summary": "Polynomial operations combine like powers of x and use distribution to multiply every relevant term.",
+      "ideas": [
+        "Like terms have identical variable powers.",
+        "When multiplying monomials, add their exponents.",
+        "Multiply binomials with distribution, then combine like terms."
+      ],
+      "formulas": [
+        "xᵐ × xⁿ = xᵐ⁺ⁿ",
+        "(x+a)(x+b)=x²+(a+b)x+ab"
+      ],
+      "workedExample": {
+        "prompt": "Expand (x+3)(x+5).",
+        "steps": [
+          "Multiply each term: x²+5x+3x+15.",
+          "Combine the x terms.",
+          "Result: x²+8x+15."
+        ]
+      },
+      "commonMistake": "Do not add exponents when adding terms; only combine like powers.",
+      "realWorld": "Polynomial expressions model production and geometry relationships.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "polynomial-division",
+      "chapterId": "alg-polynomials",
+      "title": "Synthetic Division & Factor Theorem",
+      "summary": "Division reveals whether a linear expression is a polynomial factor. Synthetic division is a compact method for x−c divisors.",
+      "ideas": [
+        "The Remainder Theorem says the remainder upon dividing P(x) by x−c equals P(c).",
+        "If P(c)=0, then x−c is a factor.",
+        "Write missing polynomial powers as zero coefficients before synthetic division."
+      ],
+      "formulas": [
+        "Remainder for P(x) ÷ (x−c) = P(c)",
+        "P(c)=0 ⟺ (x−c) is a factor"
+      ],
+      "workedExample": {
+        "prompt": "For P(x)=x²−5x+6, is x−2 a factor?",
+        "steps": [
+          "Evaluate P(2)=4−10+6=0.",
+          "The remainder is zero.",
+          "So x−2 is a factor."
+        ]
+      },
+      "commonMistake": "For a divisor x+3, synthetic input c is −3, not +3.",
+      "realWorld": "Factor tests help identify roots of higher-degree models.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "polynomial-end-behavior",
+      "chapterId": "alg-polynomials",
+      "title": "End Behavior & Turning Points",
+      "summary": "A polynomial’s leading term controls how its graph behaves far left and far right.",
+      "ideas": [
+        "Even-degree polynomials point the same way at both ends.",
+        "Odd-degree polynomials point in opposite directions.",
+        "A positive leading coefficient makes the right end point up; a negative one makes it point down."
+      ],
+      "formulas": [
+        "Leading term = aₙxⁿ",
+        "Maximum turning points for degree n: n−1"
+      ],
+      "workedExample": {
+        "prompt": "Describe the right-end behavior of f(x)=−2x³+5x+1.",
+        "steps": [
+          "The leading term is −2x³.",
+          "Odd degree and negative coefficient give a falling right end.",
+          "As x→+∞, f(x)→−∞."
+        ]
+      },
+      "commonMistake": "Lower-degree terms do not control end behavior.",
+      "realWorld": "End behavior helps interpret long-range growth models.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "rational-expressions",
+      "chapterId": "alg-rational",
+      "title": "Simplifying Rational Expressions",
+      "summary": "Rational expressions are fractions of polynomials. Factoring often exposes common factors that can be canceled.",
+      "ideas": [
+        "Factor the numerator and denominator before canceling.",
+        "Only cancel common MULTIPLICATIVE factors, never terms separated by + or −.",
+        "Excluded inputs make the original denominator equal zero, even if a factor cancels."
+      ],
+      "formulas": [
+        "(x²−9)/(x−3)=x+3 for x≠3",
+        "denominator ≠ 0"
+      ],
+      "workedExample": {
+        "prompt": "Simplify (x²−16)/(x−4).",
+        "steps": [
+          "Factor numerator: (x−4)(x+4).",
+          "Cancel the common factor x−4.",
+          "The result is x+4, with x≠4."
+        ]
+      },
+      "commonMistake": "(x+2)/x does not simplify to 2; never cancel across addition.",
+      "realWorld": "Rates, mixture formulas and rational models use variable fractions.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "radical-equations",
+      "chapterId": "alg-rational",
+      "title": "Radical Expressions & Equations",
+      "summary": "Radicals reverse powers, but squaring both sides can introduce answers that do not satisfy the starting equation.",
+      "ideas": [
+        "√x is the nonnegative principal square root.",
+        "Isolate the radical before squaring both sides.",
+        "Substitute candidate solutions into the ORIGINAL equation to reject extraneous roots."
+      ],
+      "formulas": [
+        "√a × √b = √(ab) for a,b≥0",
+        "If √(x+c)=d, then x=d²−c (check d≥0)"
+      ],
+      "workedExample": {
+        "prompt": "Solve √(x+5)=4.",
+        "steps": [
+          "Square both sides: x+5=16.",
+          "Solve x=11.",
+          "Check √16=4; the solution is valid."
+        ]
+      },
+      "commonMistake": "Squaring can add invalid solutions; always check.",
+      "realWorld": "Distance and energy formulas often contain square roots.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "rational-asymptotes",
+      "chapterId": "alg-rational",
+      "title": "Rational Graphs & Asymptotes",
+      "summary": "A rational function can approach a line without touching it. Zeros of denominators and polynomial degrees predict its behavior.",
+      "ideas": [
+        "A vertical asymptote often occurs where a reduced denominator is zero.",
+        "If numerator degree is less than denominator degree, horizontal asymptote is y=0.",
+        "If degrees are equal, the horizontal asymptote is the ratio of leading coefficients."
+      ],
+      "formulas": [
+        "f(x)=a/(x−h)+k: VA x=h, HA y=k",
+        "Equal degrees: HA y = leading coefficient ratio"
+      ],
+      "workedExample": {
+        "prompt": "Find the vertical asymptote of f(x)=3/(x−5)+2.",
+        "steps": [
+          "Set the denominator x−5=0.",
+          "Solve x=5.",
+          "This is the vertical asymptote; y=2 is horizontal."
+        ]
+      },
+      "commonMistake": "A canceled denominator factor creates a hole, not necessarily a vertical asymptote.",
+      "realWorld": "Rational graphs describe saturation and inverse-distance behavior.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "exponential-functions",
+      "chapterId": "alg-growth",
+      "title": "Exponential Growth & Decay",
+      "summary": "Exponential models multiply by the same factor over equal time intervals. This is different from adding a fixed amount.",
+      "ideas": [
+        "In y=a·bᵗ, a is the initial amount and b is the growth/decay factor.",
+        "For a growth rate r, b=1+r; for decay rate r, b=1−r.",
+        "Equal percentage change creates exponential rather than linear growth."
+      ],
+      "formulas": [
+        "A(t)=A₀(1+r)ᵗ",
+        "Decay: A(t)=A₀(1−r)ᵗ"
+      ],
+      "workedExample": {
+        "prompt": "A population of 200 grows by 10% per year. Find the count after two years.",
+        "steps": [
+          "Set growth factor b=1.10.",
+          "Compute 200×1.10².",
+          "The model gives 242."
+        ]
+      },
+      "commonMistake": "10% growth means multiply by 1.10, not add 10 each year.",
+      "realWorld": "Population, compound interest and bacterial growth are exponential.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "logarithms",
+      "chapterId": "alg-growth",
+      "title": "Logarithms & Inverse Operations",
+      "summary": "A logarithm asks for the exponent required to reach a number. It is the inverse of exponentiation.",
+      "ideas": [
+        "log_b(x)=y means bʸ=x, with b>0 and b≠1.",
+        "The argument of a real logarithm must be positive.",
+        "Product, quotient and power rules simplify logarithmic expressions."
+      ],
+      "formulas": [
+        "log_b(xy)=log_b x+log_b y",
+        "log_b(xⁿ)=n log_b x",
+        "log_b(bˣ)=x"
+      ],
+      "workedExample": {
+        "prompt": "Evaluate log₂(32).",
+        "steps": [
+          "Ask: what exponent on 2 makes 32?",
+          "Since 2⁵=32, the exponent is 5.",
+          "Therefore log₂(32)=5."
+        ]
+      },
+      "commonMistake": "log(a+b) is NOT log a + log b.",
+      "realWorld": "The Richter-like scales and sound intensity use logarithmic scales.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "arithmetic-geometric-sequences",
+      "chapterId": "alg-growth",
+      "title": "Arithmetic & Geometric Sequences",
+      "summary": "Sequences organize numbers by position. Arithmetic sequences add a constant; geometric sequences multiply by a constant.",
+      "ideas": [
+        "Arithmetic sequences have common difference d.",
+        "Geometric sequences have common ratio r.",
+        "For finite sums, use the number of terms and the right formula."
+      ],
+      "formulas": [
+        "Arithmetic aₙ=a₁+(n−1)d",
+        "Geometric aₙ=a₁rⁿ⁻¹",
+        "Arithmetic sum Sₙ=n(a₁+aₙ)/2"
+      ],
+      "workedExample": {
+        "prompt": "Find term 6 of the arithmetic sequence 4, 7, 10, …",
+        "steps": [
+          "The first term is 4 and common difference is 3.",
+          "Use a₆=4+(6−1)×3.",
+          "The sixth term is 19."
+        ]
+      },
+      "commonMistake": "The nth term uses n−1 jumps from the first term.",
+      "realWorld": "Savings plans and repeated patterns can be modeled as sequences.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "center-spread",
+      "chapterId": "bridge-statistics",
+      "title": "Mean, Median & Standard Deviation",
+      "summary": "Summary measures describe the center and spread of a data set. Different measures answer different questions.",
+      "ideas": [
+        "Mean is the arithmetic average; median is the middle after sorting.",
+        "Range is maximum minus minimum; outliers influence mean more than median.",
+        "Standard deviation measures typical distance from the mean in the same units as data."
+      ],
+      "formulas": [
+        "Mean = Σx / n",
+        "Range = max − min",
+        "Population variance = Σ(x−μ)²/n"
+      ],
+      "workedExample": {
+        "prompt": "Find the mean and range of 3, 5, 7, 9.",
+        "steps": [
+          "Sum values: 3+5+7+9=24.",
+          "Divide by four: mean=6.",
+          "Range=9−3=6."
+        ]
+      },
+      "commonMistake": "The median cannot be identified reliably without sorting first.",
+      "realWorld": "Teams use statistics to evaluate performance and compare populations.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "counting-principles",
+      "chapterId": "bridge-statistics",
+      "title": "Permutations & Combinations",
+      "summary": "Counting techniques avoid writing every possible arrangement. The key question is whether order matters.",
+      "ideas": [
+        "Use the multiplication principle for independent stages.",
+        "Permutations count ordered arrangements; combinations count unordered selections.",
+        "Factorial n! multiplies every positive integer up to n, and 0!=1."
+      ],
+      "formulas": [
+        "nPᵣ=n!/(n−r)!",
+        "nCᵣ=n!/(r!(n−r)!)"
+      ],
+      "workedExample": {
+        "prompt": "How many ways can you choose 2 captains from 5 students when order does not matter?",
+        "steps": [
+          "This is a combination because the selected pair has no order.",
+          "Compute 5C2 = (5×4)/(2×1).",
+          "There are 10 distinct pairs."
+        ]
+      },
+      "commonMistake": "A team selection uses combinations; assigning president and vice president uses permutations.",
+      "realWorld": "Event planning and probability calculations depend on counting.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "conditional-probability",
+      "chapterId": "bridge-statistics",
+      "title": "Conditional Probability",
+      "summary": "Conditional probability revises the sample space using information you already know.",
+      "ideas": [
+        "P(A∣B) means probability of A given B happened.",
+        "For equally likely outcomes, compare the overlap with the size of B.",
+        "Independent events satisfy P(A∣B)=P(A), when P(B)>0."
+      ],
+      "formulas": [
+        "P(A∣B) = P(A∩B)/P(B)",
+        "P(A∩B)=P(A∣B)P(B)"
+      ],
+      "workedExample": {
+        "prompt": "From 12 students, 5 play soccer, and 3 of those 5 also play chess. Find P(chess | soccer).",
+        "steps": [
+          "Restrict attention to the 5 soccer players.",
+          "Count the 3 who also play chess.",
+          "Probability is 3/5 = 60%."
+        ]
+      },
+      "commonMistake": "The denominator for P(A∣B) is the size/probability of B, not the entire group.",
+      "realWorld": "Medical testing and everyday risk estimates use conditional probability.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "unit-circle",
+      "chapterId": "bridge-trig",
+      "title": "Radian Measure & Unit Circle",
+      "summary": "The unit circle turns trigonometry into coordinates, making sine and cosine meaningful for any rotation.",
+      "ideas": [
+        "A full turn is 2π radians or 360°.",
+        "At angle θ on the unit circle, the coordinate is (cos θ, sin θ).",
+        "Quadrant signs determine whether sine and cosine are positive or negative."
+      ],
+      "formulas": [
+        "radians = degrees × π/180",
+        "degrees = radians × 180/π",
+        "Unit circle point = (cos θ, sin θ)"
+      ],
+      "workedExample": {
+        "prompt": "Convert 150° to radians.",
+        "steps": [
+          "Multiply by π/180.",
+          "150π/180 simplifies to 5π/6.",
+          "150° = 5π/6 radians."
+        ]
+      },
+      "commonMistake": "Radians are not degrees; use the correct calculator mode.",
+      "realWorld": "Waves, rotations and periodic motion use radians.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "law-sines",
+      "chapterId": "bridge-trig",
+      "title": "Law of Sines",
+      "summary": "The Law of Sines relates side lengths to the sines of their opposite angles in any triangle.",
+      "ideas": [
+        "Use the law when you know a side and its opposite angle.",
+        "Match lowercase side a to uppercase opposite angle A.",
+        "The SSA case can sometimes produce two possible triangles."
+      ],
+      "formulas": [
+        "a/sin A = b/sin B = c/sin C",
+        "A+B+C=180°"
+      ],
+      "workedExample": {
+        "prompt": "If side a=10 opposite A=30°, find side b opposite B=90°.",
+        "steps": [
+          "Set b/sin90° = 10/sin30°.",
+          "Use sin90°=1 and sin30°=1/2.",
+          "b = 10/(1/2) = 20."
+        ]
+      },
+      "commonMistake": "Never pair a side with an angle that is not opposite it.",
+      "realWorld": "Triangulation can find distances between landmarks.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "law-cosines",
+      "chapterId": "bridge-trig",
+      "title": "Law of Cosines",
+      "summary": "The Law of Cosines generalizes the Pythagorean theorem to triangles without a right angle.",
+      "ideas": [
+        "Use it with two sides and the included angle (SAS), or all three sides (SSS).",
+        "The cosine correction accounts for the included angle.",
+        "At 90°, cos90°=0, so it becomes the Pythagorean theorem."
+      ],
+      "formulas": [
+        "c² = a²+b²−2ab cos C",
+        "cos C=(a²+b²−c²)/(2ab)"
+      ],
+      "workedExample": {
+        "prompt": "Two sides of a triangle are 5 and 7 with included angle 60°. Find the opposite side.",
+        "steps": [
+          "Use c²=5²+7²−2×5×7×cos60°.",
+          "cos60°=1/2, so c²=25+49−35=39.",
+          "The length is √39 ≈ 6.24."
+        ]
+      },
+      "commonMistake": "The angle must be between the two provided sides for SAS use.",
+      "realWorld": "Navigation uses this rule to estimate distance between two travel legs.",
+      "order": 3,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "domain-range",
+      "chapterId": "bridge-functions",
+      "title": "Domain, Range & Restrictions",
+      "summary": "The domain is the set of allowed inputs; the range is the set of attained outputs. Algebraic operations can restrict inputs.",
+      "ideas": [
+        "A real square-root expression requires its radicand to be nonnegative.",
+        "A denominator cannot equal zero.",
+        "For quadratics in vertex form, the vertex helps identify the range."
+      ],
+      "formulas": [
+        "√(x−a) requires x≥a",
+        "1/(x−a) requires x≠a",
+        "y=(x−h)²+k has range y≥k"
+      ],
+      "workedExample": {
+        "prompt": "Find the real domain of f(x)=√(x−4).",
+        "steps": [
+          "Require the radicand x−4≥0.",
+          "Solve the inequality to get x≥4.",
+          "Domain is [4, ∞)."
+        ]
+      },
+      "commonMistake": "A rational hole can remain excluded even if you cancel a factor.",
+      "realWorld": "Domain restrictions keep scientific models physically meaningful.",
+      "order": 1,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "inverse-functions",
+      "chapterId": "bridge-functions",
+      "title": "Inverse Functions",
+      "summary": "An inverse reverses what a one-to-one function does. Inputs and outputs exchange places.",
+      "ideas": [
+        "A function needs to be one-to-one on its domain to have an inverse function.",
+        "To find an inverse, write y=f(x), swap x and y, then solve for y.",
+        "The graph of the inverse reflects across y=x."
+      ],
+      "formulas": [
+        "f⁻¹(f(x))=x (on the allowed domain)",
+        "If f(x)=ax+b, f⁻¹(x)=(x−b)/a, a≠0"
+      ],
+      "workedExample": {
+        "prompt": "Find the inverse of f(x)=3x+6.",
+        "steps": [
+          "Write y=3x+6 and swap x,y: x=3y+6.",
+          "Solve: y=(x−6)/3.",
+          "Thus f⁻¹(x)=(x−6)/3."
+        ]
+      },
+      "commonMistake": "f⁻¹(x) means inverse function, not 1/f(x).",
+      "realWorld": "Currency conversion and encoding/decoding use inverse relationships.",
+      "order": 2,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "transformations-modeling",
+      "chapterId": "bridge-functions",
+      "title": "Function Modeling & Composition",
+      "summary": "Applied problems rarely announce the function to use. First identify relationships, inputs, units and restrictions.",
+      "ideas": [
+        "Translate a story into a rule and define what x represents.",
+        "Check units and sensible domain restrictions.",
+        "To connect two processes, compose their functions in the right order."
+      ],
+      "formulas": [
+        "Cost C(n)=fixed cost+(price per item)n",
+        "Revenue R(n)=unit price×quantity",
+        "Profit P(n)=R(n)−C(n)"
+      ],
+      "workedExample": {
+        "prompt": "A bike rental charges $8 plus $3 per hour. Find the cost for 5 hours.",
+        "steps": [
+          "Write C(h)=8+3h.",
+          "Substitute h=5: C(5)=8+15.",
+          "Total cost is $23."
+        ]
+      },
+      "commonMistake": "Always include the fixed starting cost; it is the y-intercept.",
+      "realWorld": "Budgeting, transportation and pricing provide natural function models.",
+      "order": 3,
+      "estimatedMinutes": 18
+    }
+  ]
+}

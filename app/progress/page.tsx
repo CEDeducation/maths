@@ -1,0 +1,20 @@
+"use client";
+import Link from "next/link";
+import { ArrowRight, Award, BookOpenText, CalendarDays, CheckCircle2, ClipboardCheck, Target, Trophy } from "lucide-react";
+import { PageHeader, ProgressBar, TrackSymbol } from "@/components/UI";
+import { chapterById, chaptersForTrack, lessons, lessonsForChapter, lessonsForTrack, tracks } from "@/lib/curriculum";
+import { useProgress } from "@/lib/progress";
+export default function ProgressPage(){
+ const {progress,tests,user,configured}=useProgress();const done=lessons.filter(l=>progress[l.id]?.completed).length;
+ const attempts=Object.values(progress).reduce((x,p)=>x+p.attempts,0);
+ const best=Object.values(progress).map(p=>p.bestScore);
+ const accuracy=best.length?Math.round(best.reduce((a,b)=>a+b,0)/best.length/20*100):0;
+ const completedTests=Array.from(new Set(tests.map(t=>t.chapterId))).length;
+ const lastTests=tests.slice(0,6);
+ return <div className="page-enter"><PageHeader eyebrow="YOUR LEARNING STORY" title="Your progress" description="See where you've improved, what you've finished, and what's next." action={!user&&configured?<Link href="/auth" className="button button-primary">Sign in to sync <ArrowRight size={16}/></Link>:undefined}/>
+ {!user&&<div className="demo-notice">You&apos;re browsing as a guest. Progress is saved only in this browser. {configured?<Link href="/auth">Create an account to save to Supabase.</Link>:"Add Supabase credentials to enable online accounts."}</div>}
+ <div className="progress-stats"><div><span className="stat-icon stat-purple"><BookOpenText size={22}/></span><small>Lessons completed</small><strong>{done}<span>/{lessons.length}</span></strong></div><div><span className="stat-icon stat-coral"><Target size={22}/></span><small>Practice sessions</small><strong>{attempts}</strong></div><div><span className="stat-icon stat-mint"><Award size={22}/></span><small>Best-score average</small><strong>{accuracy}<span>%</span></strong></div><div><span className="stat-icon stat-blue"><ClipboardCheck size={22}/></span><small>Checkpoints tried</small><strong>{completedTests}<span>/{chaptersForTrack("geometry").length+chaptersForTrack("algebra-2").length+chaptersForTrack("math-bridge").length}</span></strong></div></div>
+ <div className="section-heading"><div><span className="section-kicker">KEEP GOING</span><h2>Progress by track</h2></div></div><div className="progress-track-list">{tracks.map(t=>{const ls=lessonsForTrack(t.id);const c=ls.filter(l=>progress[l.id]?.completed).length;const per=Math.round(c/ls.length*100);return <Link href={`/track/${t.id}`} key={t.id} className="progress-track-card"><TrackSymbol track={t}/><div><strong>{t.title}</strong><small>{c} of {ls.length} lessons mastered</small><ProgressBar color={t.color} percent={per}/></div><span className="progress-percent">{per}%</span><ArrowRight size={19}/></Link>})}</div>
+ <div className="section-heading progress-test-heading"><div><span className="section-kicker">ASSESSMENTS</span><h2>Chapter checkpoints</h2><p>Pass mark: 70%. You can retake any checkpoint to improve.</p></div></div><div className="progress-test-list">{tests.length?lastTests.map((t,i)=>{const chapter=chapterById(t.chapterId);const pct=Math.round(t.score/t.total*100);return <div className="test-history-row" key={`${t.id}-${i}`}><span className={`history-icon ${pct>=70?"positive":"neutral"}`}><Trophy size={19}/></span><div><strong>{chapter?.title||t.chapterId}</strong><small><CalendarDays size={13}/>{new Date(t.createdAt).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"})} · {chapter?.trackId.replace("-"," ")}</small></div><span className={`score-pill ${pct>=70?"positive":"neutral"}`}>{pct}%</span><Link href={`/test/${t.chapterId}`} className="subtle-link">Retake <ArrowRight size={15}/></Link></div>}):<div className="empty-tests"><ClipboardCheck size={34}/><strong>No chapter tests yet</strong><p>Finish a few lessons, then challenge yourself with a chapter checkpoint.</p><Link className="button button-primary" href="/track/geometry">Start with Geometry <ArrowRight size={16}/></Link></div>}</div>
+ </div>;
+}
