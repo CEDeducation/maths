@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -30,6 +29,15 @@ export default function PracticePage() {
 
   const lesson = lessonById(lessonId);
   const items = questionsForLesson(lessonId);
+
+  const chapter = lesson
+    ? chapterById(lesson.chapterId)
+    : undefined;
+
+  const track = chapter
+    ? trackById(chapter.trackId)
+    : undefined;
+
   const { savePractice } = useProgress();
 
   const [index, setIndex] = useState(0);
@@ -51,41 +59,8 @@ export default function PracticePage() {
     setWork("");
     setFinished(false);
     setMessage("");
+    setSaving(false);
   }, [lessonId]);
-
-  if (!lesson || items.length !== 20) {
-    return (
-      <div className="blank-state">
-        Practice unavailable.{" "}
-        <Link href="/">Return home</Link>
-      </div>
-    );
-  }
-
-  const chapter = chapterById(lesson.chapterId);
-
-  if (!chapter) {
-    return (
-      <div className="blank-state">
-        Chapter unavailable.{" "}
-        <Link href="/">Return home</Link>
-      </div>
-    );
-  }
-
-  const track = trackById(chapter.trackId);
-
-  if (!track) {
-    return (
-      <div className="blank-state">
-        Track unavailable.{" "}
-        <Link href="/">Return home</Link>
-      </div>
-    );
-  }
-
-  const q = items[index];
-  const correct = chosen === q.answerIndex;
 
   function reset() {
     setIndex(0);
@@ -96,23 +71,30 @@ export default function PracticePage() {
     setWork("");
     setFinished(false);
     setMessage("");
+    setSaving(false);
   }
 
   function check() {
-    if (chosen === null || checked) return;
+    const current = items[index];
+
+    if (!current || chosen === null || checked) {
+      return;
+    }
 
     setChecked(true);
 
-    if (correct) {
-      setScore((s) => s + 1);
+    if (chosen === current.answerIndex) {
+      setScore((previous) => previous + 1);
     }
   }
 
   async function next() {
-    if (!lesson) return;
+    if (!lesson || saving || !checked) {
+      return;
+    }
 
     if (index < items.length - 1) {
-      setIndex((i) => i + 1);
+      setIndex((previous) => previous + 1);
       setChosen(null);
       setChecked(false);
       setHints(0);
@@ -136,12 +118,34 @@ export default function PracticePage() {
             : "Progress could not be saved.")
       );
     } catch {
-      setMessage("Progress could not be saved.");
+      setMessage(
+        "Could not save progress. Please try again later."
+      );
     } finally {
       setSaving(false);
       setFinished(true);
     }
   }
+
+  if (
+    !lesson ||
+    !chapter ||
+    !track ||
+    items.length !== 20
+  ) {
+    return (
+      <div className="blank-state">
+        Practice unavailable.{" "}
+        <Link href="/">Return home</Link>
+      </div>
+    );
+  }
+
+  const q = items[index];
+  const correct = chosen === q.answerIndex;
+  const percent = Math.round(
+    (score / items.length) * 100
+  );
 
   return (
     <div className="page-enter">
@@ -175,8 +179,8 @@ export default function PracticePage() {
 
           <p>
             You worked through all 20 questions.
-            The best way to improve is to review
-            your mistakes and try again.
+            Review your mistakes, then try again
+            to improve your score.
           </p>
 
           <div className="score-display">
@@ -185,13 +189,11 @@ export default function PracticePage() {
               <span> / 20</span>
             </strong>
 
-            <span>
-              {Math.round((score / 20) * 100)}% correct
-            </span>
+            <span>{percent}% correct</span>
           </div>
 
           <ProgressBar
-            percent={score / 20 * 100}
+            percent={percent}
             color={score >= 14 ? "mint" : "violet"}
             height={12}
           />
@@ -205,13 +207,14 @@ export default function PracticePage() {
           </div>
 
           {message && (
-            <div className="save-message">
+            <p className="save-message">
               {message}
-            </div>
+            </p>
           )}
 
           <div className="result-actions">
             <button
+              type="button"
               className="button button-outline"
               onClick={reset}
             >
@@ -266,7 +269,9 @@ export default function PracticePage() {
                 Question {index + 1} of {items.length}
               </strong>
 
-              <span>{score} correct so far</span>
+              <span>
+                {score} correct so far
+              </span>
             </div>
 
             <ProgressBar
@@ -296,52 +301,74 @@ export default function PracticePage() {
               {q.prompt}
             </h2>
 
+            <p className="question-instruction">
+              Choose the best answer.
+            </p>
+
             <div
-              className="question-options"
+              className="answer-options"
               role="radiogroup"
-              aria-label="Choose an answer"
+              aria-label="Answer choices"
             >
-              {q.options.map((option, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  role="radio"
-                  aria-checked={chosen === i}
-                  onClick={() => {
-                    if (!checked) setChosen(i);
-                  }}
-                  disabled={checked}
-                  className={
-                    `answer-option ${
-                      chosen === i ? "selected" : ""
-                    } ${
-                      checked && i === q.answerIndex
-                        ? "right"
-                        : ""
-                    } ${
+              {q.options.map(
+                (option, optionIndex) => (
+                  <button
+                    key={optionIndex}
+                    type="button"
+                    role="radio"
+                    aria-checked={
+                      chosen === optionIndex
+                    }
+                    disabled={checked}
+                    onClick={() =>
+                      setChosen(optionIndex)
+                    }
+                    className={[
+                      "answer-option",
+                      chosen === optionIndex
+                        ? "selected"
+                        : "",
                       checked &&
-                      chosen === i &&
+                      optionIndex === q.answerIndex
+                        ? "right"
+                        : "",
+                      checked &&
+                      chosen === optionIndex &&
                       !correct
                         ? "wrong"
-                        : ""
-                    }`
-                  }
-                >
-                  <span className="option-letter">
-                    {String.fromCharCode(65 + i)}
-                  </span>
+                        : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    <span className="option-letter">
+                      {String.fromCharCode(
+                        65 + optionIndex
+                      )}
+                    </span>
 
-                  <span>{option}</span>
+                    <span>{option}</span>
 
-                  {checked &&
-                    i === q.answerIndex && (
-                      <CheckCircle2
-                        size={21}
-                        className="option-feedback"
-                      />
-                    )}
-                </button>
-              ))}
+                    {checked &&
+                      optionIndex ===
+                        q.answerIndex && (
+                        <CheckCircle2
+                          className="option-feedback"
+                          size={21}
+                        />
+                      )}
+
+                    {checked &&
+                      chosen === optionIndex &&
+                      !correct && (
+                        <XCircle
+                          className="option-feedback"
+                          size={21}
+                        />
+                      )}
+                  </button>
+                )
+              )}
             </div>
 
             {!checked && (
@@ -349,10 +376,12 @@ export default function PracticePage() {
                 <button
                   type="button"
                   className="hint-trigger"
-                  onClick={() =>
-                    setHints((x) => Math.min(2, x + 1))
-                  }
                   disabled={hints >= 2}
+                  onClick={() =>
+                    setHints((previous) =>
+                      Math.min(2, previous + 1)
+                    )
+                  }
                 >
                   <Lightbulb size={17} />
 
@@ -363,19 +392,29 @@ export default function PracticePage() {
                     : "All hints revealed"}
                 </button>
 
-                {q.hints.slice(0, hints).map((h, i) => (
-                  <div className="hint-box" key={i}>
-                    <strong>Hint {i + 1}</strong>
-                    <p>{h}</p>
-                  </div>
-                ))}
+                {q.hints
+                  .slice(0, hints)
+                  .map((hint, hintIndex) => (
+                    <div
+                      className="hint-box"
+                      key={hintIndex}
+                    >
+                      <strong>
+                        Hint {hintIndex + 1}
+                      </strong>
+
+                      <p>{hint}</p>
+                    </div>
+                  ))}
               </div>
             )}
 
             {checked && (
               <div
                 className={`feedback-box ${
-                  correct ? "correct" : "incorrect"
+                  correct
+                    ? "correct"
+                    : "incorrect"
                 }`}
               >
                 <div className="feedback-title">
@@ -388,7 +427,7 @@ export default function PracticePage() {
                   <strong>
                     {correct
                       ? "Exactly right!"
-                      : "Good try—let's work it through."}
+                      : "Good try. Let's work it through."}
                   </strong>
                 </div>
 
@@ -397,18 +436,25 @@ export default function PracticePage() {
                     STEP-BY-STEP EXPLANATION
                   </span>
 
-                  {q.hints[0] && <p>{q.hints[0]}</p>}
-                  {q.hints[1] && <p>{q.hints[1]}</p>}
+                  {q.hints[0] && (
+                    <p>
+                      <b>1.</b> {q.hints[0]}
+                    </p>
+                  )}
 
-                  {q.explanation
-                    .map((line, i) => (
-                      <p key={i}>
-                        <b>Step {i + 1}:</b> {line}
+                  {q.explanation.map(
+                    (line, stepIndex) => (
+                      <p key={stepIndex}>
+                        <b>
+                          {stepIndex + 2}.
+                        </b>{" "}
+                        {line}
                       </p>
-                    ))}
+                    )
+                  )}
 
-                  <p>
-                    <strong>Correct answer:</strong>{" "}
+                  <p className="correct-answer">
+                    Correct answer:{" "}
                     {q.options[q.answerIndex]}
                   </p>
                 </div>
@@ -441,7 +487,8 @@ export default function PracticePage() {
                 >
                   {saving
                     ? "Saving..."
-                    : index === 19
+                    : index ===
+                      items.length - 1
                     ? "Finish practice"
                     : "Next question"}
 
@@ -455,18 +502,20 @@ export default function PracticePage() {
             <div>
               <Sparkles size={19} />
 
-              <strong>Show your work</strong>
-            </div>
+              <strong>
+                Show your work
+              </strong>
 
-            <strong>
-              Private scratchpad · not submitted
-            </strong>
+              <span>
+                Private scratchpad · not submitted
+              </span>
+            </div>
 
             <textarea
               aria-label="Your scratchpad"
               value={work}
-              onChange={(e) =>
-                setWork(e.target.value)
+              onChange={(event) =>
+                setWork(event.target.value)
               }
               placeholder="Type your reasoning, equations, or notes here. This is just for you."
               rows={3}
